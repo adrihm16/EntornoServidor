@@ -76,16 +76,52 @@
     $edad = 20;
     $es_estudiante = true;
     $tiene_dni = false;
-    if ($edad>=18 && $tiene_dni) {
+    if ($edad >= 18 && $tiene_dni) {
         echo "Puede entrar";
     } else {
         echo "No puede entrar";
     }
     if ($es_estudiante && $tiene_dni) {
-        echo "Tiene ventaja";
+        echo "Tiene ventaja", "<br>";
     } else {
         echo "No tiene ventaja";
     }
+    echo "<h1>declarar variables y modificarlas</h1>";
+    $numerico = 0;
+
+    if (is_int($numerico)) {
+        $numerico += 10;
+    } elseif (is_string($numerico)) {
+        $numerico .= " - tipo string";
+    } elseif (is_bool($numerico)) {
+        echo $numerico;
+    }
+    echo "<h1>validación de variable</h1>";
+    $entrada = 0;
+
+    if (isset($entrada)) {
+        echo "Esta declarada", "<br>";
+    } else {
+        echo "No está declarada", "<br>";
+    }
+    if (empty($entrada)) {
+        echo "Esta vacía", "<br>";
+    } else {
+        echo "su valor es", $entrada, "<br>";
+    }
+    if (is_numeric($entrada)) {
+        echo "Es númerico", "<br>";
+    } else {
+        echo "No es númerico", "<br>";
+    }
+    echo "<h1>Mostrar km, combustible y gasto medio</h1>";
+    $combustible = 5;
+    $km = 24;
+
+    $gastoMedio = round($combustible/$km,2);
+    echo "Combustible gastado:", $combustible, "<br>";
+    echo "km recorridos:", $km, "<br>";
+    echo "gasto medio:", $gastoMedio, "<br>";
 ?>
 </body>
 </html>
