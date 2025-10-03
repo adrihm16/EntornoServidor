@@ -118,7 +118,7 @@
     $combustible = 5;
     $km = 24;
 
-    $gastoMedio = round($combustible/$km,2);
+    $gastoMedio =$combustible/$km;
     echo "Combustible gastado:", $combustible, "<br>";
     echo "km recorridos:", $km, "<br>";
     echo "gasto medio:", $gastoMedio, "<br>";
