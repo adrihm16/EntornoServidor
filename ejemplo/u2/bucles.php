@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>ejercicios bucles</title>
+    <style>
+        table {
+            border-collapse: collapse;
+            width: 50%;
+            margin: 20px auto;
+            font-family: Arial, sans-serif;
+            color: black;
+        }
+        td {
+            border: 2px solid #fb0303;
+            padding: 10px;
+            text-align: center;
+        }
+        tr {
+            background-color: #f47878;
+        }
+        tr:nth-child(even) {
+            background-color: #ffbebe;
+        }
+    </style>
+</head>
+<body>
+<h2>Ejercicio 1</h2>
+<?php
+    for ($i = 0; $i < 5; $i++) {
+        if ($i % 2 == 0) {
+            echo "<p style='color: red'>", $i, "<p>";
+        } else {
+            echo "<p style='color: blue'>", $i, "<p>";
+        }
+    }
+?>
+<h2>Ejercicio 2</h2>
+<?php
+    $edad = 20;
+    if ($edad <= 12) {
+        echo "Es un niño";
+    } elseif ($edad > 12 && $edad <= 17) {
+        echo "Es un adolescente";
+    } elseif ($edad > 17 && $edad <= 64) {
+        echo "Es un adulto";
+    } elseif ($edad >= 65) {
+        echo "Es un jubilado";
+    }
+?>
+<h2>Ejercicio 4</h2>
+<table>
+    <tr>
+        <?php
+            // Contador para los números
+            $numero = 1;
+
+            // Generar 10 filas (100 números / 10 columnas = 10 filas)
+            for ($fila = 0; $fila < 3; $fila++) {
+                echo "<tr>";
+                // Generar 10 columnas por fila
+                for ($columna = 0; $columna < 3; $columna++) {
+                    if ($numero <= 9) {
+                        echo "<td>$numero</td>";
+                        $numero++;
+                    }
+                }
+                echo "</tr>";
+            }
+        ?>
+    </tr>
+</table>
+<h2>Ejercicio 6</h2>
+<table>
+    <?php
+        $numero = 1;
+        $multiplicador = 1;
+        for ($i = 0; $i < 10; $i++) {
+            echo "<tr>";
+            echo "<td>$numero x $multiplicador</td>";
+            echo "<td>", $numero * $multiplicador, "</td>";
+            echo "</tr>";
+            $multiplicador++;
+        }
+    ?>
+</table>
+</body>
+</html>
