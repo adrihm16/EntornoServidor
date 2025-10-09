@@ -159,5 +159,8 @@ $media = 0;
     echo "media total ->", $media;
 ?>
 <h2>ejercicio 13</h2>
+<?php
+
+?>
 </body>
 </html>
