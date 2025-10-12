@@ -26,6 +26,31 @@
         tr:nth-child(even) {
             background-color: #ffbebe;
         }
+        .num{
+            border-collapse: collapse;
+            width: 50%;
+            margin: 20px auto;
+            font-family: Arial, sans-serif;
+            color: white;
+        }
+
+        .verde {
+            background-color: #70913f;
+        }
+
+        .tdverde {
+            border: none;
+            padding: 10px;
+            text-align: center;
+        }
+
+        th {
+            background-color: #000000;
+            font-weight: bold;
+        }
+        .verde:nth-child(even) {
+            background-color: #49612c;
+        }
     </style>
 </head>
 <body>
@@ -53,7 +78,7 @@
     }
 ?>
 <h2>Ejercicio 6</h2>
-<table>
+<table class="num">
     <tr>
         <?php
             // Contador para los números
@@ -134,23 +159,23 @@
 
 <h2>ejercicio 11</h2>
 <?php
-    $temperaturas = ["lunes" => 0, "martes" => 11, "miercoles" => 17 ,"jueves"=> 27];
-   foreach ($temperaturas as $dia => $valor) {
-       echo $dia, " ";
-       if ($valor<10) {
-           echo "<p style='color: blue'>$valor º</p>";
-       } elseif ($valor>=10 && $valor<=25) {
-           echo "<p style='color: green'>$valor º</p>";
-       }else {
-           echo "<p style='color: red'>$valor º</p>";
-       }
-   }
+    $temperaturas = ["lunes" => 0, "martes" => 11, "miercoles" => 17, "jueves" => 27];
+    foreach ($temperaturas as $dia => $valor) {
+        echo $dia, " ";
+        if ($valor < 10) {
+            echo "<p style='color: blue'>$valor º</p>";
+        } elseif ($valor >= 10 && $valor <= 25) {
+            echo "<p style='color: green'>$valor º</p>";
+        } else {
+            echo "<p style='color: red'>$valor º</p>";
+        }
+    }
 ?>
 <h2>ejercicio 12</h2>
 <?php
-$manuel = ["mates"=>rand(0,10), "lengua"=>rand(0,10), "religion"=>rand(0,10),"economía"=>rand(0,10),];
-$total = 0;
-$media = 0;
+    $manuel = ["mates" => rand(0, 10), "lengua" => rand(0, 10), "religion" => rand(0, 10), "economía" => rand(0, 10),];
+    $total = 0;
+    $media = 0;
     foreach ($manuel as $asignatura => $nota) {
         echo $asignatura, "->", $nota, "<br>";
         $total += $nota;
@@ -160,7 +185,55 @@ $media = 0;
 ?>
 <h2>ejercicio 13</h2>
 <?php
-
+    $listaNumeros = [2, 1, 4, 6, 7, 4, 12];
+    $menor = PHP_INT_MAX;
+    $mayor = PHP_INT_MIN;
+    foreach ($listaNumeros as $numero) {
+        if ($numero < $menor) {
+            $menor = $numero;
+        }
+        if ($numero > $mayor) {
+            $mayor = $numero;
+        }
+    }
+    echo "mayor-> ", $numero, "<br>";
+    echo "menor-> ", $menor, "<br>";
 ?>
+<h2>ejercicio 17</h2>
+<table>
+    <?php
+        $ListaCadenas = ["abedul", "rana", "coche"];
+        sort($ListaCadenas);
+        foreach ($ListaCadenas as $cadena) {
+            echo "<tr>";
+            echo "<td>$cadena</td>";
+            echo "</tr>";
+        }
+    ?>
+</table>
+<h2>ejercicio 18</h2>
+<table class="num">
+    <tr class="header">
+        <th>
+           Número
+        </th>
+        <th>
+            Cuadrado
+        </th>
+        <th>
+            Cubo
+        </th>
+    </tr>
+    <?php
+        $listaNumeros = [1,2,3,4];
+        foreach ($listaNumeros as $numero) {
+            echo "<tr class='verde'>";
+            echo "<td class='tdverde'>$numero</td>";
+            echo "<td class='tdverde'>", pow($numero, 2), "</td>";
+            echo "<td class='tdverde'>", pow($numero, 3), "</td>";
+            echo "</tr>";
+        }
+    ?>
+</table>
 </body>
 </html>
