@@ -26,7 +26,8 @@
         tr:nth-child(even) {
             background-color: #ffbebe;
         }
-        .num{
+
+        .num {
             border-collapse: collapse;
             width: 50%;
             margin: 20px auto;
@@ -48,6 +49,7 @@
             background-color: #000000;
             font-weight: bold;
         }
+
         .verde:nth-child(even) {
             background-color: #49612c;
         }
@@ -215,7 +217,7 @@
 <table class="num">
     <tr class="header">
         <th>
-           Número
+            Número
         </th>
         <th>
             Cuadrado
@@ -225,7 +227,7 @@
         </th>
     </tr>
     <?php
-        $listaNumeros = [1,2,3,4];
+        $listaNumeros = [1, 2, 3, 4];
         foreach ($listaNumeros as $numero) {
             echo "<tr class='verde'>";
             echo "<td class='tdverde'>$numero</td>";
@@ -235,5 +237,59 @@
         }
     ?>
 </table>
+<h2>Ejercicio 20</h2>
+<?php
+    $valores = [23, "Hola", 15, 3.14, true, 7, 8, "PHP", 2];
+    function esPrimo($num)
+    {
+        if ($num <= 1 || $num != intval($num)) {
+            return false;
+        }
+        for ($i = 2; $i <= sqrt($num); $i++) {
+            if ($num % $i == 0) {
+                return false;
+            }
+        }
+        return true;
+    }
+
+
+
+    foreach ($valores as $v) {
+        if (is_numeric($v)) {
+            $resultado = esPrimo($v) ? "es primo" : "no es primo";
+            echo "<p>$v -> $resultado</p>";
+        }
+    }
+?>
+<h2>Ejercicio 21</h2>
+<?php
+    $notas = [];
+    for ($i = 0; $i < 15; $i++) {
+        $notas[] = rand(0, 10);
+    }
+
+    function calificacion($nota) {
+        if ($nota <= 4) return "Suspenso";
+        elseif ($nota == 5) return "Aprobado";
+        elseif ($nota == 6) return "Bien";
+        elseif ($nota <= 8) return "Notable";
+        elseif ($nota == 9) return "Sobresaliente";
+        else return "Matrícula de honor";
+    }
+    echo "<table>";
+    echo "<tr><td>Nº Alumno</td><td>Nota</td><td>Calificación</td></tr>";
+
+    foreach ($notas as $i => $nota) {
+        echo "<tr>
+            <td>", ($i + 1), "</td>
+            <td>$nota</td>
+            <td>", calificacion($nota), "</td>
+          </tr>";
+    }
+
+    echo "</table>";
+?>
+
 </body>
 </html>
