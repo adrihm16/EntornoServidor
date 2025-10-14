@@ -242,7 +242,7 @@
     $valores = [23, "Hola", 15, 3.14, true, 7, 8, "PHP", 2];
     function esPrimo($num)
     {
-        if ($num <= 1 || $num != intval($num)) {
+        if ($num <= 1 || $num != $num) {
             return false;
         }
         for ($i = 2; $i <= sqrt($num); $i++) {
