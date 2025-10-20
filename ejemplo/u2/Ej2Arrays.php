@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Ejercicio1</title>
+    <title>Ejercicio2</title>
     <style>
         table {
             border-collapse: collapse;
@@ -11,6 +11,10 @@
             margin: 20px auto;
             font-family: Arial, sans-serif;
             color: black;
+        }
+
+        td:first-child {
+            font-weight: bold;
         }
 
         td {

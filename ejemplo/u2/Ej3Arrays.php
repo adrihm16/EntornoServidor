@@ -27,13 +27,6 @@
             background: #8449bf;
             color: #000000;
         }
-        .verde {
-            border: 0px solid #b4ef74;
-            padding: 10px;
-            text-align: center;
-            background: #8449bf;
-            color: #ffffff;
-        }
 
         tr {
             background-color: #ffffff;

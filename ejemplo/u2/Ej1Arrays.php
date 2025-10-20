@@ -12,6 +12,9 @@
             font-family: Arial, sans-serif;
             color: black;
         }
+        td:first-child {
+            font-weight: bold;
+        }
 
         td {
             border: 0px solid #ffffff;
@@ -84,6 +87,7 @@
             echo "<td>Vector inverso</td>";
             echo "<td>";
             rsort($lista);
+            //se puede hacer más facil con implode
             for ($i = 0; $i < count($lista); $i++) {
                 echo $lista[$i];
                 if ($i!=count($lista) - 1) {
