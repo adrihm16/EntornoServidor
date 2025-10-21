@@ -12,6 +12,7 @@
             font-family: Arial, sans-serif;
             color: black;
         }
+
         td:first-child {
             font-weight: bold;
             width: 15%;
@@ -61,10 +62,20 @@
                         "FOL" => [8, 7, 9],
                         "DES" => [4, 5, 6],
                         "DAI" => [5, 6, 8.5]
+                ],
+                "Beatriz" => [
+                        "DWES" => [8, 9, 9],
+                        "DWEC" => [9, 6, 8],
+                        "DIW" => [8, 6, 7],
+                        "FOL" => [9, 9, 9],
+                        "DES" => [7, 5, 6],
+                        "DAI" => [9, 8, 8.5]
                 ]
         ];
         $totalMedia = 0;
         $mediaGlobal = 0;
+        $mediasGlobales = [];
+        $mediaModulo = [];
         foreach ($alumnos as $nombre => $asignaturas) {
             $totalMedia = 0;
             $mediaGlobal = 0;
@@ -79,20 +90,29 @@
                     $total += $notaTrimestre;
                 }
                 $media = round($total / 3, 2);
+                $mediaModulo[$nombreAsignatura] = $media;
                 $totalMedia += $media;
                 echo "<td>$media</td>";
-                if ($media >= 5){
+                if ($media >= 5) {
                     echo "<td>Aprobado</td>";
                 } else {
                     echo "<td>Suspenso</td>";
                 }
                 echo "</tr>";
             }
-            $mediaGlobal += round($totalMedia/6, 2);
+            $mediaGlobal += round($totalMedia / 6, 2);
+            $mediasGlobales[$nombre] = $mediaGlobal;
             echo "<tr><td>Global</td><td>$mediaGlobal</td></tr>";
         }
-        echo "</table>";
-
+        echo "<th colspan = '3'>Ranking alumnos</th>";
+        arsort($mediasGlobales);
+        foreach ($mediasGlobales as $nombre => $mediaGlobal) {
+            echo "<tr><td colspan='2'>$nombre</td><td>$mediaGlobal</td></tr>";
+        }
+        echo "<th colspan='6'>mejor alumn@</th>";
+        $maxAlumno = array_key_first($mediasGlobales);
+        $maxNota = current($mediasGlobales);
+        echo "<tr><td colspan='3'>$maxAlumno</td><td colspan='3'>$maxNota</td></tr>";
     ?>
 </table>
 </body>
