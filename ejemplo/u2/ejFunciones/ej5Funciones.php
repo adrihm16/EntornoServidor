@@ -5,7 +5,7 @@
 </head>
 <body>
 <?php
-    function contar_letra($cadena, $letra, $casesensitive) {
+    function contar_letra($cadena, $letra, $casesensitive = false) {
         $contador = 0;
         if ($casesensitive) {
             if (!empty($cadena)) {
@@ -32,7 +32,7 @@
     }
 
     $texto = "hOLA ciudAdanos";
-    $resultado = contar_letra($texto, "a", true);
+    $resultado = contar_letra($texto, "a");
     echo "<p>Original: $texto</p>";
     echo "<p>Número de a: $resultado</p>";
 ?>
