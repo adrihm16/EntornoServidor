@@ -1,0 +1,295 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>ejercicios bucles</title>
+    <style>
+        table {
+            border-collapse: collapse;
+            width: 50%;
+            margin: 20px auto;
+            font-family: Arial, sans-serif;
+            color: black;
+        }
+
+        td {
+            border: 2px solid #fb0303;
+            padding: 10px;
+            text-align: center;
+        }
+
+        tr {
+            background-color: #f47878;
+        }
+
+        tr:nth-child(even) {
+            background-color: #ffbebe;
+        }
+
+        .num {
+            border-collapse: collapse;
+            width: 50%;
+            margin: 20px auto;
+            font-family: Arial, sans-serif;
+            color: white;
+        }
+
+        .verde {
+            background-color: #70913f;
+        }
+
+        .tdverde {
+            border: none;
+            padding: 10px;
+            text-align: center;
+        }
+
+        th {
+            background-color: #000000;
+            font-weight: bold;
+        }
+
+        .verde:nth-child(even) {
+            background-color: #49612c;
+        }
+    </style>
+</head>
+<body>
+<h2>Ejercicio 1</h2>
+<?php
+    for ($i = 0; $i < 5; $i++) {
+        if ($i % 2 == 0) {
+            echo "<p style='color: red'>", $i, "<p>";
+        } else {
+            echo "<p style='color: blue'>", $i, "<p>";
+        }
+    }
+?>
+<h2>Ejercicio 2</h2>
+<?php
+    $edad = 20;
+    if ($edad <= 12) {
+        echo "Es un niño";
+    } elseif ($edad > 12 && $edad <= 17) {
+        echo "Es un adolescente";
+    } elseif ($edad > 17 && $edad <= 64) {
+        echo "Es un adulto";
+    } elseif ($edad >= 65) {
+        echo "Es un jubilado";
+    }
+?>
+<h2>Ejercicio 6</h2>
+<table class="num">
+    <tr>
+        <?php
+            // Contador para los números
+            $numero = 1;
+
+            // Generar 10 filas (100 números / 10 columnas = 10 filas)
+            for ($fila = 0; $fila < 3; $fila++) {
+                echo "<tr>";
+                // Generar 10 columnas por fila
+                for ($columna = 0; $columna < 3; $columna++) {
+                    if ($numero <= 9) {
+                        echo "<td>$numero</td>";
+                        $numero++;
+                    }
+                }
+                echo "</tr>";
+            }
+        ?>
+    </tr>
+</table>
+<h2>Ejercicio 7</h2>
+<table>
+    <?php
+        $numero = 1;
+        $multiplicador = 1;
+        for ($i = 0; $i < 10; $i++) {
+            echo "<tr>";
+            echo "<td>$numero x $multiplicador</td>";
+            echo "<td>", $numero * $multiplicador, "</td>";
+            echo "</tr>";
+            $multiplicador++;
+        }
+    ?>
+</table>
+<h2>ejercicio 8</h2>
+<?php
+    $num = 2;
+    $potencia = 1;
+    for ($j = 0; $j < 10; $j++) {
+        echo pow($num, $potencia), " ";
+        $potencia++;
+    }
+    echo "<br>";
+    $potencia = 1;
+    $cont1 = 0;
+    while ($cont1 < 10) {
+        echo pow($num, $potencia), " ";
+        $potencia++;
+        $cont1++;
+    }
+    echo "<br>";
+    $potencia = 1;
+    $cont1 = 0;
+    do {
+        echo pow($num, $potencia), " ";
+        $potencia++;
+        $cont1++;
+    } while ($cont1 < 10);
+?>
+<h2>Ejercicio 10</h2>
+<?php
+    $num = 260;
+    for ($j = 260; $j >= 200; $j--) {
+        echo $j, " ";
+    }
+    echo "<br>";
+    while ($num >= 240) {
+        echo $num, " ";
+        $num--;
+    }
+    echo "<br>";
+    $num = 260;
+    do {
+        echo $num, " ";
+        $num--;
+    } while ($num >= 240);
+?>
+
+<h2>ejercicio 11</h2>
+<?php
+    $temperaturas = ["lunes" => 0, "martes" => 11, "miercoles" => 17, "jueves" => 27];
+    foreach ($temperaturas as $dia => $valor) {
+        echo $dia, " ";
+        if ($valor < 10) {
+            echo "<p style='color: blue'>$valor º</p>";
+        } elseif ($valor >= 10 && $valor <= 25) {
+            echo "<p style='color: green'>$valor º</p>";
+        } else {
+            echo "<p style='color: red'>$valor º</p>";
+        }
+    }
+?>
+<h2>ejercicio 12</h2>
+<?php
+    $manuel = ["mates" => rand(0, 10), "lengua" => rand(0, 10), "religion" => rand(0, 10), "economía" => rand(0, 10),];
+    $total = 0;
+    $media = 0;
+    foreach ($manuel as $asignatura => $nota) {
+        echo $asignatura, "->", $nota, "<br>";
+        $total += $nota;
+    }
+    $media = $total / count($manuel);
+    echo "media total ->", $media;
+?>
+<h2>ejercicio 13</h2>
+<?php
+    $listaNumeros = [2, 1, 4, 6, 7, 4, 12];
+    $menor = PHP_INT_MAX;
+    $mayor = PHP_INT_MIN;
+    foreach ($listaNumeros as $numero) {
+        if ($numero < $menor) {
+            $menor = $numero;
+        }
+        if ($numero > $mayor) {
+            $mayor = $numero;
+        }
+    }
+    echo "mayor-> ", $numero, "<br>";
+    echo "menor-> ", $menor, "<br>";
+?>
+<h2>ejercicio 17</h2>
+<table>
+    <?php
+        $ListaCadenas = ["abedul", "rana", "coche"];
+        sort($ListaCadenas);
+        foreach ($ListaCadenas as $cadena) {
+            echo "<tr>";
+            echo "<td>$cadena</td>";
+            echo "</tr>";
+        }
+    ?>
+</table>
+<h2>ejercicio 18</h2>
+<table class="num">
+    <tr class="header">
+        <th>
+            Número
+        </th>
+        <th>
+            Cuadrado
+        </th>
+        <th>
+            Cubo
+        </th>
+    </tr>
+    <?php
+        $listaNumeros = [1, 2, 3, 4];
+        foreach ($listaNumeros as $numero) {
+            echo "<tr class='verde'>";
+            echo "<td class='tdverde'>$numero</td>";
+            echo "<td class='tdverde'>", pow($numero, 2), "</td>";
+            echo "<td class='tdverde'>", pow($numero, 3), "</td>";
+            echo "</tr>";
+        }
+    ?>
+</table>
+<h2>Ejercicio 20</h2>
+<?php
+    $valores = [23, "Hola", 15, 3.14, true, 7, 8, "PHP", 2];
+    function esPrimo($num)
+    {
+        if ($num <= 1 || $num != $num) {
+            return false;
+        }
+        for ($i = 2; $i <= sqrt($num); $i++) {
+            if ($num % $i == 0) {
+                return false;
+            }
+        }
+        return true;
+    }
+
+
+
+    foreach ($valores as $v) {
+        if (is_numeric($v)) {
+            $resultado = esPrimo($v) ? "es primo" : "no es primo";
+            echo "<p>$v -> $resultado</p>";
+        }
+    }
+?>
+<h2>Ejercicio 21</h2>
+<?php
+    $notas = [];
+    for ($i = 0; $i < 15; $i++) {
+        $notas[] = rand(0, 10);
+    }
+
+    function calificacion($nota) {
+        if ($nota <= 4) return "Suspenso";
+        elseif ($nota == 5) return "Aprobado";
+        elseif ($nota == 6) return "Bien";
+        elseif ($nota <= 8) return "Notable";
+        elseif ($nota == 9) return "Sobresaliente";
+        else return "Matrícula de honor";
+    }
+    echo "<table>";
+    echo "<tr><td>Nº Alumno</td><td>Nota</td><td>Calificación</td></tr>";
+
+    foreach ($notas as $i => $nota) {
+        echo "<tr>
+            <td>", ($i + 1), "</td>
+            <td>$nota</td>
+            <td>", calificacion($nota), "</td>
+          </tr>";
+    }
+
+    echo "</table>";
+?>
+
+</body>
+</html>
