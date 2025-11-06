@@ -9,38 +9,46 @@
 <?php
     $fabrica = [
             1 => [
-                    ["produccion" => "500", "defectuosos" => 10, "parada" => 1.5],
-                    ["produccion" => "700", "defectuosos" => 17, "parada" => 1],
+                    ["produccion" => 500, "defectuosos" => 10, "parada" => 2],
+                    ["produccion" => 700, "defectuosos" => 17, "parada" => 2],
             ],
             2 => [
-                    ["produccion" => "300", "defectuosos" => 5, "parada" => 2],
-                    ["produccion" => "450", "defectuosos" => 11, "parada" => 1.5]
+                    ["produccion" => 300, "defectuosos" => 5, "parada" => 2],
+                    ["produccion" => 450, "defectuosos" => 11, "parada" => 3]
             ],
             3 => [
-                    ["produccion" => "600", "defectuosos" => 15, "parada" => 1.2],
-                    ["produccion" => "700", "defectuosos" => 17, "parada" => 1]
+                    ["produccion" => 600, "defectuosos" => 15, "parada" => 1.2],
+                    ["produccion" => 700, "defectuosos" => 17, "parada" => 1]
             ]
     ];
-    echo "<table border='1'>";
-    foreach ($fabrica as $linea => $dias) {
-        $contadorDias = 0;
-        $produccionTotalLinea = 0;
-        echo "<tr>";
-        echo "<th>línea $linea</th>";
-        foreach ($dias as $dia => $atributos) {
-            $contadorDias++;
+    /**
+     * @param array $fabrica
+     */
+    function mostrarTabla(array $fabrica)
+    {
+        echo "<table border='1'>";
+        foreach ($fabrica as $linea => $dias) {
+            $contadorDias = 0;
+            $produccionTotalLinea = 0;
             echo "<tr>";
-            echo "<th>día $contadorDias</th>";
-            echo "</tr>";
-            foreach ($atributos as $atributo => $valor) {
+            echo "<th>línea $linea</th>";
+            foreach ($dias as $dia => $atributos) {
+                $contadorDias++;
                 echo "<tr>";
-                echo "<td>$atributo</td>";
-                echo "<td>$valor</td>";
+                echo "<th>día $contadorDias</th>";
                 echo "</tr>";
+                foreach ($atributos as $atributo => $valor) {
+                    echo "<tr>";
+                    echo "<td>$atributo</td>";
+                    echo "<td>$valor</td>";
+                    echo "</tr>";
+                }
             }
         }
+        echo "</table>";
     }
-    echo "</table>";
+
+    mostrarTabla($fabrica);
     /**
      * @param array $fabrica
      */
@@ -65,6 +73,7 @@
             echo "<br><br>";
         }
     }
+
     calcularProduccionTotal($fabrica);
     /**
      * @param array $fabrica
@@ -96,6 +105,105 @@
     }
 
     CalcularPorcentajeDefectuosos($fabrica);
+    /**
+     * @param array $fabrica
+     */
+    function calcularParadasTotalesPorLinea(array $fabrica)
+    {
+        echo "<h3>Paradas Totales Por Línea</h3>";
+        foreach ($fabrica as $linea => $dias) {
+            $contadorDias = 0;
+            $paradaTotalLinea = 0;
+            echo "Línea: $linea";
+            echo "<br>";
+            foreach ($dias as $dia => $atributos) {
+                $contadorDias++;
+                foreach ($atributos as $atributo => $valor) {
+                    if ($atributo == "parada") {
+                        $paradaTotalLinea += $valor;
+                    }
+                }
+            }
+            echo "Parada total: $paradaTotalLinea";
+            echo "<br><br>";
+        }
+    }
+
+    calcularParadasTotalesPorLinea($fabrica);
+
+    /**
+     * @param array $fabrica
+     */
+    function DosDiasOMas(array $fabrica)
+    {
+        echo "<h3>Líneas con dos dias parados o más</h3>";
+        foreach ($fabrica as $linea => $dias) {
+            $diasParados = 0;
+            $contadorDias = 0;
+            $paradaTotalLinea = 0;
+            foreach ($dias as $dia => $atributos) {
+                $contadorDias++;
+                foreach ($atributos as $atributo => $valor) {
+                    if ($atributo == "parada") {
+                        $paradaTotalLinea += $valor;
+                        if ($valor >= 2) {
+                            $diasParados++;
+                        }
+                    }
+                }
+            }
+            if ($diasParados >= 2) {
+                echo "Línea: $linea";
+                echo "<br>";
+                echo "Días parados: " . $diasParados;
+                echo "<br>";
+                echo "Parada total: $paradaTotalLinea";
+                echo "<br><br>";
+            }
+
+        }
+    }
+    DosDiasOMas($fabrica);
+
+    function LineaMasProductiva(array $fabrica)
+    {
+        $productividadLinea = 0;
+        $mayor = 0;
+        $diaMayor = "";
+        $produccionTotalLinea = 0;
+    {
+        echo "<h3>Línea con mayor producitividad</h3>";
+        foreach ($fabrica as $linea => $dias) {
+            $contadorDias = 0;
+            $paradaTotalLinea = 0;
+            $productividadLinea = 0;
+            $produccionTotalLinea = 0;
+            $mayor = 0;
+            $defectuososTotalLinea = 0;
+            $diaMayor = "";
+            foreach ($dias as $dia => $atributos) {
+                $contadorDias++;
+                foreach ($atributos as $atributo => $valor) {
+                    if ($atributo == "parada") {
+                        $paradaTotalLinea += $valor;
+                    }else if ($atributo == "produccion") {
+                        $produccionTotalLinea += $valor;
+                    }else if ($atributo == "defectuosos") {
+                        $defectuososTotalLinea += $valor;
+                    }
+                }
+                }
+            $productividadLinea = $produccionTotalLinea - $defectuososTotalLinea;
+            if ($productividadLinea > $mayor) {
+                $mayor = $productividadLinea;
+                $diaMayor = $dia;
+            }
+            }
+        }
+        echo "Línea: $diaMayor <br>";
+        echo "Productividad Línea: $productividadLinea";
+    }
+    LineaMasProductiva($fabrica);
 ?>
 </body>
 </html>
