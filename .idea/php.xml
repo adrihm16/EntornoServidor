@@ -23,7 +23,10 @@
   <component name="PhpIncludePathManager">
     <include_path>
       <path value="$PROJECT_DIR$/ejemplo/vendor/composer" />
+<<<<<<< HEAD
       <path value="$PROJECT_DIR$/prueba/vendor/composer" />
+=======
+>>>>>>> d2de617ad909f2e62a3b637f20cba309ee44f139
     </include_path>
   </component>
   <component name="PhpProjectSharedConfiguration" php_language_level="8.2" />

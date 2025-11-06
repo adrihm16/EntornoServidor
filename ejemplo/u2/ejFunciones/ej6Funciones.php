@@ -22,7 +22,10 @@
             echo "</table>";
         }
     }
+<<<<<<< HEAD
 
+=======
+>>>>>>> d2de617ad909f2e62a3b637f20cba309ee44f139
     mostrarDatos($datos);
 ?>
 </body>
