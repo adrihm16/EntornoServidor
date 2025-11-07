@@ -17,7 +17,7 @@
                     ["produccion" => 450, "defectuosos" => 11, "parada" => 3]
             ],
             3 => [
-                    ["produccion" => 600, "defectuosos" => 15, "parada" => 1.2],
+                    ["produccion" => 10000, "defectuosos" => 15, "parada" => 1.2],
                     ["produccion" => 700, "defectuosos" => 17, "parada" => 1]
             ]
     ];
@@ -169,7 +169,7 @@
     {
         $productividadLinea = 0;
         $mayor = 0;
-        $diaMayor = "";
+        $lineaMayor = 0;
         $produccionTotalLinea = 0;
     {
         echo "<h3>Línea con mayor producitividad</h3>";
@@ -178,9 +178,7 @@
             $paradaTotalLinea = 0;
             $productividadLinea = 0;
             $produccionTotalLinea = 0;
-            $mayor = 0;
             $defectuososTotalLinea = 0;
-            $diaMayor = "";
             foreach ($dias as $dia => $atributos) {
                 $contadorDias++;
                 foreach ($atributos as $atributo => $valor) {
@@ -196,11 +194,11 @@
             $productividadLinea = $produccionTotalLinea - $defectuososTotalLinea;
             if ($productividadLinea > $mayor) {
                 $mayor = $productividadLinea;
-                $diaMayor = $dia;
+                $lineaMayor = $linea;
             }
             }
         }
-        echo "Línea: $diaMayor <br>";
+        echo "Línea: $lineaMayor <br>";
         echo "Productividad Línea: $productividadLinea";
     }
     LineaMasProductiva($fabrica);

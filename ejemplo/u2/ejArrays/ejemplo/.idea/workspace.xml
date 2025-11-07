@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="b05bd88b-81f4-489e-9220-b0d9249dc5ee" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/u2/Ej1Arrays.php" beforeDir="false" afterPath="$PROJECT_DIR$/u2/ejArrays/Ej1Arrays.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/u2/Ej2Arrays.php" beforeDir="false" afterPath="$PROJECT_DIR$/u2/ejArrays/Ej2Arrays.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/u2/Ej3Arrays.php" beforeDir="false" afterPath="$PROJECT_DIR$/u2/ejArrays/Ej3Arrays.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/u2/Ej4Arrays.php" beforeDir="false" afterPath="$PROJECT_DIR$/u2/ejArrays/Ej4Arrays.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/u2/TablaForEach.php" beforeDir="false" afterPath="$PROJECT_DIR$/u2/ejArrays/TablaForEach.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/u2/recorrerArrays.php" beforeDir="false" afterPath="$PROJECT_DIR$/u2/ejArrays/recorrerArrays.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/u2/reto11Arrays.php" beforeDir="false" afterPath="$PROJECT_DIR$/u2/ejArrays/reto11Arrays.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/u2/reto12Arrays.php" beforeDir="false" afterPath="$PROJECT_DIR$/u2/ejArrays/reto12Arrays.php" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ComposerSettings" synchronizationState="SYNCHRONIZE">
+    <pharConfigPath>$PROJECT_DIR$/composer.json</pharConfigPath>
+    <execution />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="PHP File" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="PhpWorkspaceProjectConfiguration" interpreter_name="PHP">
+    <include_path>
+      <path value="$PROJECT_DIR$/vendor/composer" />
+    </include_path>
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;customColor&quot;: &quot;&quot;,
+  &quot;associatedIndex&quot;: 4
+}</component>
+  <component name="ProjectId" id="33p64yGjEvQnMPTdfHhM3WnbNyh" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="1" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "PHP Script.ej1Funciones.php.executor": "Run",
+    "PHP Script.ej3Funciones.php.executor": "Run",
+    "PHP Script.ej5Funciones.php.executor": "Run",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "git-widget-placeholder": "main",
+    "ignore.virus.scanning.warn.message": "true",
+    "junie.onboarding.icon.badge.shown": "true",
+    "last_opened_file_path": "C:/Users/elena/repositorio_git/Repositorios_2526/EntornoServidor/ejemplo/u2",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "reference.settings.ide.settings.web.browsers",
+    "to.speed.mode.migration.done": "true",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\elena\repositorio_git\Repositorios_2526\EntornoServidor\ejemplo\u2" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\elena\repositorio_git\Repositorios_2526\EntornoServidor\ejemplo\u2\ejArrays" />
+    </key>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-js-predefined-d6986cc7102b-9c94529fcfe0-JavaScript-PS-252.26199.163" />
+        <option value="bundled-php-predefined-a98d8de5180a-f0a8ef430dfa-com.jetbrains.php.sharedIndexes-PS-252.26199.163" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="b05bd88b-81f4-489e-9220-b0d9249dc5ee" name="Changes" comment="" />
+      <created>1760001478530</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1760001478530</updated>
+      <workItem from="1760001479899" duration="27000" />
+      <workItem from="1760001548143" duration="4445000" />
+      <workItem from="1760273289839" duration="41000" />
+      <workItem from="1760273395670" duration="3802000" />
+      <workItem from="1760437626647" duration="572000" />
+      <workItem from="1760699518951" duration="2000000" />
+      <workItem from="1760903823150" duration="688000" />
+      <workItem from="1761213902091" duration="53000" />
+      <workItem from="1761214035339" duration="1913000" />
+      <workItem from="1761387985523" duration="3677000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
+  </component>
+</project>

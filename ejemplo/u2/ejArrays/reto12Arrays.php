@@ -8,6 +8,7 @@
         body {
             background-color: black;
         }
+
         table {
             border-collapse: collapse;
             width: 50%;
@@ -73,6 +74,16 @@
                 ]
         ];
         $listaSalariosMedios = [];
+        $salarioTotalFp = 0;
+        $contadorFp = 0;
+        $salarioTotalEso = 0;
+        $contadorEso = 0;
+        $salarioTotalBach = 0;
+        $contadorBach = 0;
+        $salarioTotalNada = 0;
+        $contadorNada = 0;
+        $salarioTotalUni = 0;
+        $contadorUni = 0;
         foreach ($sistema as $pueblo => $habitante) {
             echo "<tr><th colspan='6'>$pueblo</th></tr>";
             echo "<tr class='info'><td>Nombre</td><td>Edad</td><td>Sexo</td><td>Estudios</td><td>Salario</td></tr>";
@@ -83,6 +94,28 @@
             $contadorUniversitarios = 0;
             $porcentajeUniversitarios = 0;
             foreach ($habitante as $valor) {
+                switch (strtolower($valor[3])) {
+                    case "universidad":
+                        $salarioTotalUni += $valor[4];
+                        $contadorUni++;
+                        break;
+                    case "bachillerato":
+                        $salarioTotalBach += $valor[4];
+                        $contadorBach++;
+                        break;
+                    case "nada":
+                        $salarioTotalNada += $valor[4];
+                        $contadorNada++;
+                        break;
+                    case "fp":
+                        $salarioTotalFp += $valor[4];
+                        $contadorFp++;
+                        break;
+                    case "eso":
+                        $salarioTotalEso += $valor[4];
+                        $contadorEso++;
+                        break;
+                }
                 echo "<tr>";
                 $totalEdad += $valor[1];
                 $totalSalario += $valor[4];
@@ -94,6 +127,7 @@
                 }
                 echo "</tr>";
             }
+
             $mediaEdad = round($totalEdad / count($habitante));
             $mediaSalario = round($totalSalario / count($habitante));
             $listaSalariosMedios[$pueblo] = $mediaSalario;
@@ -104,11 +138,30 @@
             echo "<td colspan='2'>Porcentaje universitarios: $porcentajeUniversitarios%</td>";
             echo "</tr>";
         }
+        $mediaSalarioFp = round($salarioTotalFp / $contadorFp, 2);
+        $mediaSalarioUni = round($salarioTotalUni / $contadorUni, 2);
+        $mediaSalarioBach = round($salarioTotalBach / $contadorBach, 2);
+        $mediaSalarioNada = round($salarioTotalNada / $contadorNada, 2);
+        $mediaSalarioEso = round($salarioTotalEso / $contadorEso, 2);
+        $mediasEstudio = [
+                "eso" => $mediaSalarioEso,
+                "bachillerato" => $mediaSalarioBach,
+                "nada" => $mediaSalarioNada,
+                "fp" => $mediaSalarioFp,
+                "universidad" => $mediaSalarioUni
+        ];
         arsort($listaSalariosMedios);
         $maxPueblo = array_key_first($listaSalariosMedios);
         $maxSalario = current($listaSalariosMedios);
         echo "<tr><th colspan='6'>Mayor Salario medio: </th></tr>";
         echo "<tr><td>$maxPueblo</td><td>$maxSalario €</td></tr>";
+        echo "<tr><th colspan='6'>salario medio/estudios: </th></tr>";
+        foreach ($mediasEstudio as $estudio => $valor) {
+            echo "<tr>";
+            echo "<td>$estudio</td>";
+            echo "<td>$valor</td>";
+            echo "</tr>";
+        }
     ?>
 </table>
 </body>
