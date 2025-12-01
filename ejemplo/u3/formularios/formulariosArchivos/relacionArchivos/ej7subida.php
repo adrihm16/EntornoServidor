@@ -23,7 +23,7 @@
         $tamanioMb = round($tamanio / 1024 / 1024, 2);
         $extension = pathinfo($nombre, PATHINFO_EXTENSION);
 
-        if (!file_exists("./img)")) {
+        if (!file_exists("./img")) {
             mkdir("./img", 0777, true);
         }
         $tiposPermitidos = ['image/jpeg', 'image/png', 'image/gif'];
