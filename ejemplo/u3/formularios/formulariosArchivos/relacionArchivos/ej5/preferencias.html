@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Preferencias de Comida</title>
+</head>
+<body>
+
+    <h2>Encuesta de Comida Rápida</h2>
+
+    <form action="procesarPreferencias.php" method="POST">
+
+        <label for="comida">Selecciona una Comida:</label>
+        <select id="comida" name="comida" required>
+            <option value="" disabled selected>-- Elige una opción --</option>
+            <option value="pizza">Pizza</option>
+            <option value="hamburguesa">Hamburguesa</option>
+            <option value="sushi">Sushi</option>
+            <option value="ensalada">Ensalada</option>
+        </select>
+
+            <div>
+                <label>¿Te gusta esta comida?</label>
+                <label>
+                    <input type="radio" name="gusta" value="si" required> Sí
+                </label>
+                <label>
+                    <input type="radio" name="gusta" value="no"> No
+                </label>
+            </div>
+        </div>
+
+        <button type="submit">Enviar Preferencia</button>
+    </form>
+</body>
+</html>

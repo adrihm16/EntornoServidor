@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Synapse - Inicio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #003366; /* Azul Oscuro Synapse */
+            --accent: #0056b3; /* Azul Brillante */
+            --bg-light: #F8F9FA;
+            --text-dark: #111827;
+            --text-gray: #6B7280;
+            --white: #ffffff;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Inter', sans-serif; }
+        body { background-color: var(--bg-light); color: var(--text-dark); }
+        a { text-decoration: none; color: inherit; }
+
+        /* HEADER */
+        header { background-color: var(--primary); color: white; padding: 16px 40px; display: flex; align-items: center; justify-content: space-between; }
+        .logo { font-weight: 800; font-size: 24px; letter-spacing: 1px; display: flex; align-items: center; gap: 10px; }
+        .search-bar { flex: 1; max-width: 500px; margin: 0 20px; position: relative; }
+        .search-bar input { width: 100%; padding: 10px 16px; border-radius: 20px; border: none; outline: none; }
+        .nav-icons { display: flex; gap: 20px; font-size: 20px; }
+
+        /* HERO SECTION */
+        .hero {
+            background: linear-gradient(90deg, #0b1120 0%, #1a2332 100%);
+            color: white;
+            padding: 80px 40px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            overflow: hidden;
+        }
+        .hero-text { max-width: 500px; }
+        .hero h1 { font-size: 56px; line-height: 1.1; margin-bottom: 16px; }
+        .hero p { font-size: 20px; color: #cbd5e1; margin-bottom: 32px; }
+        .btn-hero {
+            background-color: white;
+            color: var(--primary);
+            padding: 14px 32px;
+            border-radius: 8px;
+            font-weight: 600;
+            font-size: 18px;
+            transition: transform 0.2s;
+            display: inline-block;
+        }
+        .btn-hero:hover { transform: scale(1.05); }
+
+        /* PRODUCTS GRID */
+        .container { max-width: 1200px; margin: 0 auto; padding: 60px 20px; }
+        h2 { font-size: 32px; margin-bottom: 40px; text-align: center; }
+
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 32px; }
+
+        /* TARJETAS MEJORADAS (Soft Shadows) */
+        .card {
+            background: white;
+            border-radius: 24px;
+            padding: 24px;
+            text-align: center;
+            transition: transform 0.2s, box-shadow 0.2s;
+            /* La magia de la sombra suave: */
+            box-shadow: 0 10px 30px rgba(0,0,0,0.06);
+            border: 1px solid rgba(0,0,0,0.02);
+        }
+        .card:hover { transform: translateY(-5px); box-shadow: 0 20px 40px rgba(0,0,0,0.12); }
+
+        .card img { width: 100%; height: 200px; object-fit: contain; margin-bottom: 20px; }
+        .card h3 { font-size: 20px; margin-bottom: 8px; color: var(--text-dark); }
+        .card .price { font-size: 22px; font-weight: 700; color: var(--text-dark); }
+
+        /* FOOTER */
+        footer { background-color: var(--primary); color: white; padding: 60px 20px; margin-top: 60px; }
+        .footer-grid { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: repeat(4, 1fr); gap: 40px; }
+        .footer-col h4 { margin-bottom: 20px; font-size: 18px; }
+        .footer-col ul { list-style: none; }
+        .footer-col li { margin-bottom: 12px; color: #cbd5e1; cursor: pointer; }
+    </style>
+</head>
+<body>
+
+<header>
+    <div class="logo">💠 SYNAPSE</div>
+    <div class="search-bar">
+        <input type="text" placeholder="Buscar productos...">
+    </div>
+    <div class="nav-icons">
+        <span>🛒</span> <span>👤</span>
+    </div>
+</header>
+
+<section class="hero">
+    <div class="hero-text">
+        <h1>OnePlus 15</h1>
+        <p>Captura cada detalle. Potencia sin límites con el nuevo procesador Snapdragon 8 Gen 4.</p>
+        <a href="producto.html" class="btn-hero">Comprar ahora</a>
+    </div>
+    <img src="https://via.placeholder.com/500x400/333/fff?text=OnePlus+15+Visual" alt="Hero Phone" style="border-radius: 20px;">
+</section>
+
+<div class="container">
+    <h2>Productos Destacados</h2>
+    <div class="grid">
+        <div class="card">
+            <img src="https://via.placeholder.com/200?text=Phone" alt="Phone">
+            <h3>One Plus 15</h3>
+            <div class="price">1029,00€</div>
+        </div>
+        <div class="card">
+            <img src="https://via.placeholder.com/200?text=iPhone" alt="iPhone">
+            <h3>iPhone 17 Pro Max</h3>
+            <div class="price">1700,00€</div>
+        </div>
+        <div class="card">
+            <img src="https://via.placeholder.com/200?text=Pixel" alt="Pixel">
+            <h3>iPhone 17 Air</h3>
+            <div class="price">999,90€</div>
+        </div>
+    </div>
+</div>
+
+<footer>
+    <div class="footer-grid">
+        <div class="footer-col">
+            <h4>Sobre Nosotros</h4>
+            <ul><li>Acerca de Synapse</li><li>Atención al Cliente</li></ul>
+        </div>
+        <div class="footer-col">
+            <h4>Ayuda</h4>
+            <ul><li>Envíos</li><li>Devoluciones</li></ul>
+        </div>
+    </div>
+</footer>
+</body>
+</html>
