@@ -51,8 +51,6 @@
     } else {
         echo "<p style='color:red;'>No se ha subido ningún archivo o ha ocurrido un error.</p>";
     }
-
-
 ?>
 </body>
 </html>
