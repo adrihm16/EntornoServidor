@@ -25,7 +25,7 @@
             $inicioJ = substr($cadenas[$j], 0, 3);
             if ($inicioI == $inicioJ) {
                 echo "<td style='background-color: #b4ef74'></td>";
-            }else{
+            } else {
                 echo "<td style='background-color: #ff2b2b'></td>";
             }
         }

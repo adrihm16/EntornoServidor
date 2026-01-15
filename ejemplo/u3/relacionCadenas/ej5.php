@@ -13,10 +13,10 @@
     foreach ($lista as $palabra) {
         echo "<tr>";
         echo "<td>$palabra</td>";
-       $palabraCorregida = str_replace('a', 'A', $palabra);
-       $palabraCorregida = str_replace('b', 'v', $palabraCorregida);
-       echo "<td>$palabraCorregida</td>";
-       echo "<tr>";
+        $palabraCorregida = str_replace('a', 'A', $palabra);
+        $palabraCorregida = str_replace('b', 'v', $palabraCorregida);
+        echo "<td>$palabraCorregida</td>";
+        echo "<tr>";
     }
     echo "</table>";
 ?>
