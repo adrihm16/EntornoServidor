@@ -1,9 +1,11 @@
 <?php
+
     $conexion = new mysqli("localhost", "root", "", "centro");
-    $sentencia = "select dni, nombre from alumnos where edad < ?";
-    $consulta=$conexion->prepare($sentencia);
-    $edad = 21;
-    $consulta->bind_param("i", $edad);
+    $sentencia = "select dni, nombre from alumnos where nombre like ?";
+    $consulta = $conexion->prepare($sentencia);
+    $nombre = 'María';
+
+    $consulta->bind_param("s", $nombre);
     $consulta->bind_result($cadena, $nombre);
     $consulta->execute();
     while ($consulta->fetch()) {
